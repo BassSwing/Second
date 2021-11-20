@@ -22,22 +22,22 @@ class Example(QMainWindow):
         if self.do_paint:
             qp = QPainter()
             qp.begin(self)
-            self.draw_flag(qp)
+            self.circle(qp)
             qp.end()
 
     def paint(self):
         self.do_paint = True
         self.repaint()
 
-    def draw_flag(self, qp):
-        lst = [random.randint(-300, 300) for i in range(10)]
+    def circle(self, qp):
         # Задаем кисть
         qp.setBrush(QColor(255, 255, 0))
         # Рисуем прямоугольник заданной кистью
         for i in range(10):
             x = random.randint(20, 400)
             y = random.randint(20, 400)
-            qp.drawEllipse(x, y, 120, 120)
+            z = random.randint(20, 100)
+            qp.drawEllipse(x, y, z, z)
 
 
 if __name__ == '__main__':
